@@ -1,0 +1,7 @@
+__pycache__/*
+Lib/*
+venv/*
+Scripts/*
+logging.log
+pyvenv.cfg
+.vscode/*
