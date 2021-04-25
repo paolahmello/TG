@@ -8,3 +8,7 @@ function checkFile(){
         $('input[type=file]').siblings(".custom-file-label").addClass("selected").html(fileName);
     }
 }
+
+function gravar(){
+    console.log('gravando')
+}

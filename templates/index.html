@@ -1,25 +1,60 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>{% block title %} Piano NICS - UNICAMP {% endblock %}</h1>
-    <hr>
-    <h2>Choose a wav to convert to midi</h2>
+<h2 class="titulo">{% block title %} Piano NICS - UNICAMP {% endblock %}</h2>
 
+
+<button class="btn btn-primary w-100 mb-2" data-toggle="collapse" href="#upload" role="button" aria-expanded="false"
+        aria-controls="upload">Upload WAV File
+</button>
+<div id="upload" class="collapse formulario">
     <form id="formFile" method="POST" enctype="multipart/form-data">
-      <div class="custom-file">
-        <input id="fileInput" class="custom-file-input" type="file" name="file" accept=".wav" onchange="checkFile()">
-        <label class="custom-file-label" for="customFile">Choose a wav file</label>
-      </div>
+        <div class="custom-file">
+            <input id="fileInput" class="custom-file-input" type="file" name="file" accept=".wav"
+                   onchange="checkFile()">
+            <label class="custom-file-label" for="customFile">Choose a wav file</label>
+        </div>
+        <div class="text-xs-center mt-2">
+            <div class="g-recaptcha" data-sitekey="6LeJeB8aAAAAAMr27aI8yHkk-XycRtakq-DlZ5AL"></div>
+        </div>
 
-      <div class="text-xs-center">
-        <div class="g-recaptcha" data-sitekey="6LeJeB8aAAAAAMr27aI8yHkk-XycRtakq-DlZ5AL"></div>
-      </div>
-
-      <div class="form-group">
-        <button id="buttonConvert" type="submit" class="btn btn-primary" name="btn" value="convertMIDI" disabled>Convert to MIDI</button>
-      </div>
+        <div class="form-group mb-1">
+            <button id="buttonConvert" type="submit" class="btn btn-primary" name="btn" value="convertMIDI"
+                    disabled>
+                Convert to MIDI
+            </button>
+        </div>
     </form>
+</div>
 
-    <script src="static/js/index.js"></script>
-    
+<button class="btn btn-primary w-100 mb-2" data-toggle="collapse" href="#record" role="button" aria-expanded="false"
+        aria-controls="record">Record New WAV
+</button>
+<div id="record" class="collapse formulario">
+    <form id="formFile_record" method="POST" enctype="multipart/form-data">
+        <div class="row px-0 mx-0 col-12">
+
+<!--            THIS INPUT WILL CHANGE TO INDICATE WAVE FORMAT-->
+            <input id="fileInput_record" class="mic-input w-100" type="text" readonly placeholder="Press MIC to Record"
+                   onchange="checkFile()">
+
+            <a class="mic-btn fa fa-microphone py-2" onclick="gravar()"></a>
+        </div>
+
+        <div class="text-xs-center mt-2">
+            <div class="g-recaptcha" data-sitekey="6LeJeB8aAAAAAMr27aI8yHkk-XycRtakq-DlZ5AL"></div>
+        </div>
+
+        <div class="form-group mb-1">
+            <button id="buttonConvert_record" type="submit" class="btn btn-primary" name="btn" value="convertMIDI"
+                    disabled>
+                Convert to MIDI
+            </button>
+        </div>
+    </form>
+</div>
+
+
+<script src="static/js/index.js"></script>
+
 {% endblock %}
