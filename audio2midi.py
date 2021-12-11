@@ -261,7 +261,6 @@ def pianoroll_to_midi(y, pianoroll):
         
 
 def run(file_in, file_out):
-    pdb.set_trace()
     #sr=22050
     note_min='A2'
     note_max='E6'
