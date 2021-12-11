@@ -30,14 +30,12 @@ h2 {
 
 .formulario{
     padding: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     border: 1px solid #007bff;
     border-radius: 0.5rem;
 }
 
 .mic-input{
-    border: solid 1px lightgrey;
-    border-radius: 0.2rem;
     height: calc(1.5em + .75rem + 2px);
     padding-left: 0.75rem;
     padding-right: 0.75rem;
@@ -47,6 +45,7 @@ h2 {
 
 .mic-btn{
     background-color: #e9ecef;
+    height: calc(1.5em + .75rem + 2px);
     text-align: center;
     margin-left: -5rem;
     width: 5rem;
@@ -59,4 +58,12 @@ h2 {
     font-weigh: 400;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     outline: none;
+}
+
+.mask{
+    height: 100vh !important;
+    width: 100vw !important;
+    cursor: wait !important;
+    z-index: 999 !important;
+    position: absolute;
 }

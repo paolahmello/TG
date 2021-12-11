@@ -27,20 +27,25 @@
     </form>
 </div>
 
-<button class="btn btn-primary w-100 mb-2" data-toggle="collapse" href="#record" role="button" aria-expanded="false"
+<button class="btn btn-primary w-100 mb-2 mt-3" data-toggle="collapse" href="#record" role="button" aria-expanded="false"
         aria-controls="record">Record New WAV
 </button>
 <div id="record" class="collapse formulario">
-    <form id="formFile_record" method="POST" enctype="multipart/form-data">
-        <div class="row px-0 mx-0 col-12">
-
-<!--            THIS INPUT WILL CHANGE TO INDICATE WAVE FORMAT-->
-            <input id="fileInput_record" class="mic-input w-100" type="text" readonly placeholder="Press MIC to Record"
-                   onchange="checkFile()">
-
-            <a class="mic-btn fa fa-microphone py-2" onclick="gravar()"></a>
+    <div class="row px-0 mx-0 col-12">
+        <div class="col-10 px-0 mx-0">
+            <audio id="gravacao" class="mic-input px-0 w-100" controls></audio>
         </div>
+        <div class="col-2 px-0 mx-0">
+            <a id='botao_mic' class="mic-btn fa fa-microphone py-2 pull-right">
+        </a>
+        </div>
+    </div>
 
+    <form id="formFile_record" method="POST" enctype="multipart/form-data">
+        <div class="custom-file">
+            <input id="fileInput_rec" class="custom-file-input" type="file" name="file" accept=".wav">
+            <label class="custom-file-label" for="customFile">Choose a wav file</label>
+        </div>
         <div class="text-xs-center mt-2">
             <div class="g-recaptcha" data-sitekey="6LeJeB8aAAAAAMr27aI8yHkk-XycRtakq-DlZ5AL"></div>
         </div>

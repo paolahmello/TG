@@ -1,4 +1,6 @@
-flask
-datetime
-requests
-midiutil
+flask==2.0.2
+datetime==4.3
+requests==2.26.0
+midiutil==1.2.1
+numpy==1.21.4
+librosa
